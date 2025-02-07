@@ -1,0 +1,5 @@
+copy {
+    from new File(rootProject.rootDir, 'scripts/pre-commit.sh')
+    into new File(rootProject.rootDir, '.git/hooks')
+    fileMode 0777
+}

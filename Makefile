@@ -18,6 +18,10 @@ dep: ## Download Dependencies
 format: ## Format Project
 	@./gradlew spotlessApply
 
+.PHONY: style
+style: ## Run CheckStyle
+	@./gradlew checkstyleMain checkstyleTest
+
 ##@ Tests
 
 .PHONY: test

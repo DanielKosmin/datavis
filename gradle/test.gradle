@@ -6,4 +6,6 @@ tasks.register("unit", Test) {
     useJUnitPlatform {
         excludeTags "int"
     }
+    classpath = sourceSets.test.runtimeClasspath
+    testClassesDirs = sourceSets.test.output.classesDirs
 }

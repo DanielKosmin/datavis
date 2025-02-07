@@ -1,5 +1,13 @@
-copy {
-    from new File(rootProject.rootDir, 'scripts/pre-commit.sh')
+tasks.register('copyPreCommitHook', Copy) {
+    from new File(rootProject.rootDir, 'scripts/pre-commit')
     into new File(rootProject.rootDir, '.git/hooks')
-    fileMode 0777
+}
+
+tasks.register('fixPreCommitHookPermissions', Exec) {
+    dependsOn copyPreCommitHook
+    commandLine 'chmod', '755', "${rootProject.rootDir}/.git/hooks/pre-commit"
+}
+
+tasks.named('build') {
+    dependsOn fixPreCommitHookPermissions
 }

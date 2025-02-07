@@ -1,7 +1,7 @@
 <configuration>
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>[%level] [%logger{0}] - %msg%n</pattern>
+            <pattern>[%level] [%logger{0}] %replace([username=%X{username}]){\[username=\], ''} - %msg%n</pattern>
         </encoder>
     </appender>
 

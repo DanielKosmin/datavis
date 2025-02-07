@@ -1,0 +1,8 @@
+POST localhost:8080/datavis/v1/schema
+Content-Type: multipart/form-data; boundary=boundary
+X-Username: bob
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="test.csv"
+
+< test.csv
